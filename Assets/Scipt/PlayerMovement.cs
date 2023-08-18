@@ -25,22 +25,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump")&&isGrounded){
-            rb.AddForce(Vector2.up * jump);
+        if(Input.GetKey(KeyCode.Space)&&isGrounded == true){
+            rb.AddForce(Vector3.up * jump);
         }
         if(Input.GetKeyDown(KeyCode.LeftShift)){
             anim.SetTrigger("Slide");
         }
     }
-    private void OnColisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Ground")){
+    
+    
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.tag == "Ground")
+        {
             isGrounded = true;
+            
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other){
-        if(other.gameObject.CompareTag("Ground")){
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.tag == "Ground")
+        {
             isGrounded = false;
         }
     }
+
 }
