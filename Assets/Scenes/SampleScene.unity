@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9acf448c0984444a521d56f2a71bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 8
+  jump: 30
   anim: {fileID: 782139858}
 --- !u!95 &782139858
 Animator:
@@ -762,8 +762,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPointTg: {fileID: 890070778}
   Triangle:
-  - {fileID: 6618251349690799815, guid: 13bfaa61203a9ef459f793e8f3944863, type: 3}
   - {fileID: 6528116925561315059, guid: 86f435145d1a0ac4a8a621d31f8e0f35, type: 3}
+  - {fileID: 6618251349690799815, guid: 13bfaa61203a9ef459f793e8f3944863, type: 3}
+  - {fileID: 1379429404833512652, guid: 499805157391e3144878d8fc7b529e2f, type: 3}
+  - {fileID: 6328104743821629767, guid: c68d0320f0837984980846aacbf12987, type: 3}
   timeTg: 0
   timeSpawnTg: 2
 --- !u!1 &1137169090

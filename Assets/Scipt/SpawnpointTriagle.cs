@@ -20,7 +20,7 @@ public class SpawnpointTriagle : MonoBehaviour
         if(timeTg > timeSpawnTg)
         {
             timeTg = 0;
-            int randNum = Random.Range(0,2);
+            int randNum = Random.Range(0,4);
             Instantiate(Triangle[randNum], SpawnPointTg.transform.position, Quaternion.identity);
         }
     }
