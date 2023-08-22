@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     
     public Animator anim;
 
-    public void Awake(){
+    public void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
     }
 
