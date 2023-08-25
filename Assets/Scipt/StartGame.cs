@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
+    int GameStartChecker = 1;
+
     [SerializeField] GameObject gameStart;
 
     void Awake()
@@ -14,10 +16,12 @@ public class StartGame : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if((GameStartChecker == 1) && (Input.GetKeyDown("space")))
         {
             gameStart.SetActive(false);
             Time.timeScale = 1;
+
+            GameStartChecker = 0;
         }
     }
 }
