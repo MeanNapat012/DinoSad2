@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHp : MonoBehaviour
 {
@@ -10,11 +10,13 @@ public class PlayerHp : MonoBehaviour
     public float timeNodamage;
     public float timedamage = 4;
     public bool damage;
-    [SerializeField] GameObject gameOver;
+    [SerializeField] TMP_Text displayHPText;
+    GameOver gameOver;
 
     void Start()
     {
         CurrentHp = MaxHp;
+        DisplayHP();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -26,20 +28,24 @@ public class PlayerHp : MonoBehaviour
                 CurrentHp = CurrentHp - 1;
                 timeNodamage = 0;
             }
-            if(CurrentHp == 0)
-            {
-                Time.timeScale = 0;
-                gameOver.SetActive(true);
-
-                if(Input.GetKeyDown("space"))
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
             
+            DisplayHP();            
         }
     }
 
     void Update()
     {
         timeNodamage += Time.deltaTime;
+
+        if(CurrentHp == 0)
+        {
+            gameOver = FindObjectOfType<GameOver>();
+            gameOver.GameEnd();
+        }
+    }
+
+    void DisplayHP()
+    {
+        displayHPText.text = "Health: " + CurrentHp;
     }
 }
