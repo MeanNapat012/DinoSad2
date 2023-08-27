@@ -1038,11 +1038,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af407d4e0c7eb24c861c9d04a7bd2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 1
+  MaxHp: 3
   CurrentHp: 0
   timeNodamage: 0
   timedamage: 4
-  damage: 0
   displayHPText: {fileID: 1608674044}
 --- !u!61 &782139860
 BoxCollider2D:

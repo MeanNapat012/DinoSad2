@@ -9,7 +9,6 @@ public class PlayerHp : MonoBehaviour
     public int CurrentHp;
     public float timeNodamage;
     public float timedamage = 4;
-    public bool damage;
     [SerializeField] TMP_Text displayHPText;
     GameOver gameOver;
 
